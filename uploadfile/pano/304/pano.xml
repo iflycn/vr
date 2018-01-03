@@ -1,0 +1,17 @@
+<krpano>
+<include url="../pano_config.xml" />
+<preview url="preview.jpg" />
+<image><cube url="pano_%s.jpg" /></image>
+<view stereographic="true" fisheye="1.0" fov="155" fovtype="VFOV" fovmax="150" hlookat="-180" vlookat="77" />
+<autorotate enabled="true" waittime="3.0" accel="1" speed="2" horizon="0" tofov="off" />
+<display flash10="off" details="24" />
+<events onloadcomplete="delayedcall(3.0,normalview());" />
+<action name="normalview">
+tween(view.hlookat,0,2.5,easeInOutQuad);
+tween(view.vlookat,0,2.5,easeInOutQuad);
+tween(view.fov,85,2.5,easeInOutQuad);
+tween(view.fisheye,0.0,2.5,easeInOutQuad);
+wait(2.7);
+set(display.flash10,on);
+</action>
+</krpano>

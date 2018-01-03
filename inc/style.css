@@ -1,0 +1,236 @@
+﻿/* CSS made by bulusi.com */
+/* 2012-11-28 */
+
+/* 公用样式v0.3 */
+*{
+margin:0;
+padding:0;
+border:0;
+outline:0;
+vertical-align:baseline;
+text-align:left;
+font-size:100%;
+font-weight:normal;
+font-style:normal;
+font-family:"Microsoft YaHei",SimSun,sans-serif;
+*font-family:Arial,SimSun,sans-serif;
+}
+
+html,body{
+width:100%;
+height:100%;
+}
+html{
+font-size:12px;
+overflow-x:hidden;
+overflow-y:scroll;
+}
+body{
+color:#000;
+background:#f5f5f5;
+}
+
+::selection{
+background:#00f;
+color:#fff;
+}
+
+table{
+border-collapse:collapse;
+border-spacing:0;
+}
+
+img{
+display:block;
+max-width:100%;
+}
+
+li{
+list-style-type:none;
+}
+
+p{
+line-height:120%;
+word-wrap:break-word;
+word-break:break-all;
+text-align:justify;
+}
+q:before,q:after{ 
+content:"";
+}
+
+strong{
+font-weight:bold;
+}
+
+em{
+font-style:italic;
+}
+
+del{ 
+text-decoration:line-through;
+}
+
+textarea{
+resize:none;
+}
+
+button{
+cursor:pointer;
+*overflow:visible;
+}
+
+.block{
+margin:0 auto;
+width:980px;
+zoom:1;
+overflow:auto;
+}
+
+.container{
+display:table-cell;
+vertical-align:middle;
+}
+
+.h{
+display:none;
+}
+
+.l{
+background:url(../images/icon_loading.gif) center center no-repeat;
+}
+
+.t{
+transition:.1s;
+-ms-transition:.1s;
+-moz-transition:.1s;
+-webkit-transition:.1s;
+-o-transition:.1s;
+}
+
+.en{
+font-family:"Segoe UI",Tahoma,Arial,Verdana,sans-serif;
+}
+.jp{
+font-family:Meiryo,"MS Mincho",Arial,sans-serif;
+}
+.kr{
+font-family:"Malgun Gothic",Dotum,Arial,sans-serif;
+}
+.kai{
+font-family:STKaiti,KaiTi,KaiTi_GB2312,sans-serif;
+}
+.song{
+font-family:STZhongsong,SimSun,sans-serif;
+}
+
+a{
+text-decoration:none;
+}
+a:link,a:visited{
+color:#333;
+}
+a:active,a:hover{
+color:#009b84;
+}
+
+/* 通用样式 */
+div.locked,div.alert{
+position:absolute;
+left:0;
+top:0;
+width:100%;
+display:none;
+z-index:999;
+}
+div.locked{
+background:url(../images/icon_loading.gif) no-repeat;
+}
+div.alert{
+text-align:center;
+background:url(../images/icon_blank.gif) repeat;
+}
+div.alert span{
+display:inline-block;
+padding:0 42px;
+height:42px;
+line-height:42px;
+font-size:14px;
+font-weight:bold;
+text-align:center;
+color:#000;
+border:3px #aaa double;
+border-radius:4px;
+box-shadow:0px 0px 4px #ddd;
+background:#fafafa;
+}
+div.debug{
+position:absolute;
+position:fixed;
+bottom:0;
+left:0;
+padding:6px 1%;
+width:98%;
+max-height:270px;
+*height:expression($(this).height()>270?"270px":true);
+line-height:18px;
+color:#fff;
+background:#000;
+word-break:break-all;
+overflow-y:scroll;
+z-index:9999;
+}
+div.debug hr{
+margin:6px 0;
+display:block;
+height:1px;
+background:#ccc;
+}
+
+/* 私有样式 */
+h1{
+margin-top:20px;
+padding:0 20px;
+font-size:4em;
+color:#009b84;
+}
+h5{
+padding:10px 20px;
+font-size:.8em;
+color:#999;
+}
+ul.pano_list{
+padding:20px;
+}
+ul.pano_list li{
+line-height:2em;
+font-size:1.4em;
+}
+ul.pano_list li.pano_title{
+font-size:2em;
+color:#009b84;
+}
+ul.pano_list a{
+display:block;
+}
+ul.pano_list em{
+display:inline-block;
+margin-left:.8em;
+line-height:.4em;
+font-size:.4em;
+font-style:normal;
+color:#900;
+}
+span.map{
+display:block;
+width:100%;
+height:100%;
+background:#f5f5f5;
+overflow:hidden;
+}
+span.map div#pano{
+width:100%;
+height:100%;
+background:url(../images/icon_loading.gif) #f5f5f5 center center no-repeat;
+overflow:hidden;
+}

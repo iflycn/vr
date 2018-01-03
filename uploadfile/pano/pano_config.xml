@@ -1,0 +1,33 @@
+<krpano>
+<include url="../../inc/pano_webvr.xml" devices="html5" />
+<plugin name="WebVR" keep="true" devices="html5" multireslock.desktop="true" multireslock.mobile.or.tablet="false" mobilevr_fake_support="true" onavailable="removelayer(webvr_enterbutton);webvr_onavailable();" onentervr="webvr_onentervr();webvr_setup();jscall($('a.pano_logo,div.pano_qr').hide());" onexitvr="webvr_onexitvr();webvr_setup();jscall($('a.pano_logo').show());" />
+<plugin name="sound" url="../../inc/pano_sound.swf" alturl="../../inc/pano_sound.js" preload="true" mute="false" />
+
+<plugin name="button_vr" url="../../images/vr_hotspot.png" keep="true" visible="false" align="topright" x="20" y="20" alpha="0.8" scale="0.8" onover="tween(alpha,1);" onout="tween(alpha,0.8);" crop="480|0|60|50" onloaded="if(ismobile,set(scale,1.4));" onclick="webvr.enterVR();" />
+<plugin name="button_rotate" url="../../images/vr_hotspot.png" keep="true" visible="false" align="topright" x="20" y="68" alpha="0.8" scale="0.8" onover="tween(alpha,1);" onout="tween(alpha,0.8);" crop="420|0|60|50" onloaded="if(ismobile,set(scale,1.4);set(y,104));" onclick="switch(autorotate.enabled);switch(crop,420|0|60|50,420|50|60|50);" />
+<plugin name="button_sound" url="../../images/vr_hotspot.png" keep="true" visible="false" align="topright" x="20" y="116" alpha="0.8" scale="0.8" onover="tween(alpha,1);" onout="tween(alpha,0.8);" crop="360|0|60|50" onloaded="if(ismobile,set(scale,1.4);set(y,188));" onclick="pausesoundtoggle(bgsnd);switch(crop,360|0|60|50,360|50|60|50);" />
+
+<layer name="map" keep="true" visible="false" type="container" align="rightbottom" x="0" y="0" width="180" height="180" handcursor="false">
+<layer name="radarmask" type="container" align="lefttop" width="100%" height="100%" maskchildren="true">
+<layer name="radar" url="../../inc/pano_radar.swf" alturl="../../inc/pano_radar.js" visible="false" align="lefttop" edge="center" zorder="1" scale="0.5" fillcolor="0xffffff" fillalpha="0.4" linecolor="0x009944" linewidth="1" linealpha="0.8" headingoffset="0" />
+<layer name="mapspot" x="0" y="0" url="../../images/vr_mapspot.png" align="lefttop" edge="center" zorder="2" handcursor="false" />
+</layer>
+</layer>
+<action name="setmap">
+set(layer[map].visible,true);set(layer[mapspot].x,%1);set(layer[mapspot].y,%2);copy(layer[radar].x,layer[mapspot].x);copy(layer[radar].y,layer[mapspot].y);set(layer[radar].heading,%3);set(layer[radar].visible,true);
+</action>
+
+<style name="helicopter" url="../../images/vr_hotspot.png" keep="false" zorder="1" crop="0|0|60|50" onovercrop="60|0|60|50" cropnormal="0|0|60|50" onovercropnormal="60|0|60|50" cropvisited="0|50|60|50" onovercropvisited="60|50|60|50" onloaded="if(ismobile,set(scale,1.6));" onhover="tween(autorotate.speed,0,0.1);" onout="tween(autorotate.speed,2,0.3);" onclick="looktohotspot();loadscene(get(linkedscene),null,MERGE,BLEND(1));if(get(data-hlookat),set(view.hlookat,get(data-hlookat)));set(plugin[button_rotate].crop,420|0|60|50);" />
+<style name="onfoot" url="../../images/vr_hotspot.png" keep="false" zorder="1" crop="120|0|60|50" onovercrop="180|0|60|50" cropnormal="120|0|60|50" onovercropnormal="180|0|60|50" cropvisited="120|50|60|50" onovercropvisited="180|50|60|50" onloaded="if(ismobile,set(scale,1.6));" onhover="tween(autorotate.speed,0,0.1);" onout="tween(autorotate.speed,2,0.3);" onclick="looktohotspot();loadscene(get(linkedscene),null,MERGE,BLEND(1));if(get(data-hlookat),set(view.hlookat,get(data-hlookat)));set(plugin[button_rotate].crop,420|0|60|50);" />
+<style name="arrow" url="../../images/vr_hotspot.png" keep="false" zorder="1" crop="240|0|60|50" onovercrop="300|0|60|50" cropnormal="240|0|60|50" onovercropnormal="300|0|60|50" cropvisited="240|50|60|50" onovercropvisited="300|50|60|50" onloaded="if(ismobile,set(scale,1.6));" onhover="tween(autorotate.speed,0,0.1);" onout="tween(autorotate.speed,2,0.3);" onclick="looktohotspot();loadscene(get(linkedscene),null,MERGE,BLEND(1));if(get(data-hlookat),set(view.hlookat,get(data-hlookat)));set(plugin[button_rotate].crop,420|0|60|50);" />
+<style name="note" url="textfield.swf" keep="false" align="center" handcursor="false" background="false" css="margin-top:68px;font-family:Microsoft YaHei,SimSun,sans-serif;font-size:14px;text-shadow:0px 1px 0px rgba(0,0,0,0.6);color:rgba(255,255,255,1);" onloaded="if(ismobile,set(css,margin-top:108px;font-size:1.6em;text-shadow:0px 1px 0px rgba(0,0,0,0.6);color:rgba(255,255,255,1)));" />
+<style name="title" url="textfield.swf" keep="true" visible="true" align="left" handcursor="false" background="false" css="font-family:Microsoft YaHei,SimSun,sans-serif;font-size:16px;text-shadow:0px 1px 0px rgba(255,255,255,0.2);color:rgba(0,153,68,1);" onloaded="if(ismobile,set(css,font-size:2em;text-shadow:0px 1px 0px rgba(255,255,255,0.2);color:rgba(0,153,68,1)));" />
+
+<contextmenu>
+<!-- <item name="test" onclick="jscall(Alert('功能测试'));" caption="功能测试" /> -->
+<item name="cr" onclick="openurl(http://www.bulusi.com/,_blank);" caption="BLUES VR ©版权所有" />
+<item name="nv" onclick="tween(view.fisheye,0.0,2.5,easeInOutQuad);lookto(0,0,85,tween(easeInOutQuad,2.5));set(autorotate.enabled,true);set(plugin[button_rotate].crop,420|0|60|50);" caption="普通视图" separator="true" />
+<item name="lp" onclick="set(autorotate.enabled,false);set(plugin[button_rotate].crop,420|50|60|50);tween(view.fisheye,1.0,2.5,easeInOutQuad);lookto(-180,77,155,tween(easeInOutQuad,2.5)));" caption="小行星视图" />
+<item name="cc" caption="变更操控模式" onclick="switch(control.mousetype,moveto,drag2d);switch(control.touchtype,moveto,drag2d);"  separator="true" />
+</contextmenu>
+</krpano>
