@@ -134,59 +134,6 @@ a:active,a:hover{
 color:#009b84;
 }
 
-/* 通用样式 */
-div.locked,div.alert{
-position:absolute;
-left:0;
-top:0;
-width:100%;
-display:none;
-z-index:999;
-}
-div.locked{
-background:url(../images/icon_loading.gif) no-repeat;
-}
-div.alert{
-text-align:center;
-background:url(../images/icon_blank.gif) repeat;
-}
-div.alert span{
-display:inline-block;
-padding:0 42px;
-height:42px;
-line-height:42px;
-font-size:14px;
-font-weight:bold;
-text-align:center;
-color:#000;
-border:3px #aaa double;
-border-radius:4px;
-box-shadow:0px 0px 4px #ddd;
-background:#fafafa;
-}
-div.debug{
-position:absolute;
-position:fixed;
-bottom:0;
-left:0;
-padding:6px 1%;
-width:98%;
-max-height:270px;
-*height:expression($(this).height()>270?"270px":true);
-line-height:18px;
-color:#fff;
-background:#000;
-word-break:break-all;
-overflow-y:scroll;
-z-index:9999;
-}
-div.debug hr{
-margin:6px 0;
-display:block;
-height:1px;
-background:#ccc;
-}
-
 /* 私有样式 */
 h1{
 margin-top:20px;
