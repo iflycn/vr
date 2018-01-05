@@ -3,7 +3,7 @@
 ![](https://github.com/iflycn/vr/blob/master/images/vr_device.png)
 
 ## 依赖
-基于 krpano、jQuery 实现。
+基于 `krpano`、`jQuery` 实现。
 
 ## 列表
 >风光
@@ -16,6 +16,7 @@
 >>震撼心灵的那一抹极光<br>
 
 >建筑
+>>纳米比亚鬼镇卡曼斯科<br>
 >>巴黎诶菲尔铁塔<br>
 >>悉尼歌剧院<br>
 >>郑州千玺广场<br>
