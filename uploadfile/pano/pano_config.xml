@@ -1,6 +1,6 @@
 <krpano>
 <include url="../../inc/pano_webvr.xml" devices="html5" />
-<plugin name="WebVR" keep="true" devices="html5" multireslock.desktop="true" multireslock.mobile.or.tablet="false" mobilevr_fake_support="true" onavailable="removelayer(webvr_enterbutton);webvr_onavailable();" onentervr="webvr_onentervr();webvr_setup();jscall($('a.pano_logo,div.pano_qr').hide());" onexitvr="webvr_onexitvr();webvr_setup();jscall($('a.pano_logo').show());" />
+<plugin name="WebVR" keep="true" devices="html5" multireslock.desktop="true" multireslock.mobile.or.tablet="false" mobilevr_fake_support="true" onavailable="removelayer(webvr_enterbutton);webvr_onavailable();" onentervr="webvr_onentervr();webvr_setup();" onexitvr="webvr_onexitvr();webvr_setup();" />
 <plugin name="sound" url="../../inc/pano_sound.swf" alturl="../../inc/pano_sound.js" preload="true" mute="false" />
 
 <plugin name="button_vr" url="../../images/vr_hotspot.png" keep="true" visible="false" align="topright" x="20" y="20" alpha="0.8" scale="0.8" onover="tween(alpha,1);" onout="tween(alpha,0.8);" crop="480|0|60|50" onloaded="if(ismobile,set(scale,1.4));" onclick="webvr.enterVR();" />

@@ -1,0 +1,12 @@
+<krpano>
+<include url="../../inc/pano_video.xml" />
+<plugin name="video" url.flash="../../inc/pano_video.swf" url.html5="../../inc/pano_video.js" pausedonstart="true" loop="true" enabled="false" zorder="0" onloaded="videointerface_setup_interface(get(name));" onvideoready="videointerface_videoready();" />
+<style name="videointerface_baseimage" url="../../images/vr_video.png" />
+<style name="videointerface_pauseimage" url="../../images/vr_playpause.png" />
+<image devices="panovideosupport"><sphere url="plugin:video" /></image>
+
+<contextmenu>
+<!-- <item name="test" onclick="jscall(Alert('功能测试'));" caption="功能测试" /> -->
+<item name="cr" onclick="openurl(http://www.bulusi.com/,_blank);" caption="BLUES VR ©版权所有" />
+</contextmenu>
+</krpano>

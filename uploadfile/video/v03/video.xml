@@ -1,0 +1,6 @@
+<krpano bgcolor="0x000000">
+<include url="../video_config.xml" />
+<!-- <plugin name="video" posterurl.ios="preview.jpg" videourl.ios="v.mp4" posterurl.no-ios="preview.jpg" videourl.no-ios="v.mp4" /> -->
+<plugin name="video" videourl.ios="v.mp4" videourl.no-ios="v.mp4" />
+<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="75" fovmax="150" fisheye="0.35" />
+</krpano>
